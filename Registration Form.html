@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration Form</title>
+  <style>
+    :root{
+      --card-bg:#ffa800; /* orange */
+      --page-bg:#fff;
+      --card-width:420px;
+      --input-width:220px;
+      --label-w:120px;
+      --accent:#000;
+      --muted:#333;
+      --radius:6px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      background:var(--page-bg);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px 10px;
+      color:var(--muted);
+    }
+
+    .card{
+      width:var(--card-width);
+      background:var(--card-bg);
+      padding:26px 28px;
+      border-radius:8px;
+      box-shadow:0 3px 0 rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.06);
+      border:4px solid rgba(0,0,0,0.03);
+    }
+
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      color:var(--accent);
+      font-weight:700;
+    }
+    p.subtitle{
+      margin:0 0 18px 0;
+      font-size:14px;
+      color:rgba(0,0,0,0.8);
+    }
+
+    form{
+      margin-top:6px;
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      margin:8px 0;
+    }
+
+    label.field{
+      width:var(--label-w);
+      font-weight:700;
+      font-size:15px;
+      color:var(--accent);
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"], select{
+      width:var(--input-width);
+      padding:6px 8px;
+      border-radius:4px;
+      border:1px solid rgba(0,0,0,0.25);
+      box-sizing:border-box;
+      font-size:13px;
+      outline:none;
+    }
+
+    input[type="radio"]{margin-right:8px;}
+    .gender-group{display:flex;flex-direction:column;margin-left:var(--label-w);}
+    .gender-item{margin:3px 0;}
+
+    .small-label{font-weight:700;margin-left:0;margin-bottom:6px}
+
+    .select-wrap{margin-left:var(--label-w);} 
+
+    .btn{
+      margin-top:12px;
+      margin-left:var(--label-w);
+      padding:6px 12px;
+      border-radius:4px;
+      border:1px solid rgba(0,0,0,0.25);
+      background:#fff;
+      cursor:pointer;
+      font-size:13px;
+    }
+
+    /* responsive */
+    @media (max-width:480px){
+      .card{width:100%;}
+      label.field{width:110px;}
+      .gender-group{margin-left:110px}
+      .select-wrap{margin-left:110px}
+      .btn{margin-left:110px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Student registration">
+    <h1>Student Registration Form</h1>
+    <p class="subtitle">Fill in this form to register</p>
+
+    <form>
+      <div class="row">
+        <label class="field" for="first">First Name</label>
+        <input id="first" name="first" type="text" placeholder="Enter your first name" />
+      </div>
+
+      <div class="row">
+        <label class="field" for="last">Last Name</label>
+        <input id="last" name="last" type="text" placeholder="Enter your last name" />
+      </div>
+
+      <div class="row">
+        <label class="field" for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="Enter your e-mail" />
+      </div>
+
+      <div class="row">
+        <label class="field" for="dob">Date of Birth</label>
+        <input id="dob" name="dob" type="date" />
+      </div>
+
+      <div class="row">
+        <label class="field" for="username">Set Username</label>
+        <input id="username" name="username" type="text" placeholder="Set Username" />
+      </div>
+
+      <div class="row">
+        <label class="field" for="password">Set Password</label>
+        <input id="password" name="password" type="password" placeholder="Set password" />
+      </div>
+
+      <div style="margin-top:6px;" class="small-label">Gender</div>
+      <div class="gender-group">
+        <label class="gender-item"><input type="radio" name="gender" value="male" checked> Male</label>
+        <label class="gender-item"><input type="radio" name="gender" value="female"> Female</label>
+        <label class="gender-item"><input type="radio" name="gender" value="other"> Others</label>
+      </div>
+
+      <div style="margin-top:10px;" class="row">
+        <label class="field">Course :</label>
+        <div class="select-wrap">
+          <select name="course">
+            <option>Course</option>
+            <option>B.Tech</option>
+            <option>MCA</option>
+            <option>BSc</option>
+            <option>Diploma</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>
